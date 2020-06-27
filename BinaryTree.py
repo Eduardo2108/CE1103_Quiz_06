@@ -5,8 +5,8 @@ class BST(object):
     def __init__(self):
         self.root = None
 
-    # False si ya estaba
-    def insert(self, d):
+    # Metodo para agregar elementos nuevos, false si ya estaba agregado
+    def add(self, d):
         if self.root:
             return self.root.insert(d)
         else:
@@ -14,19 +14,19 @@ class BST(object):
             self.root = Node(d)
             return True
 
-    # return True if d is found in tree, false otherwise
+    #metodo para encontrar un elemento, true si estaba, false si no
     def find(self, d):
         if self.root is not None:
             return self.root.find(d)
         else:
             return False
-    # return True if node successfully removed, False if not removed
-    def remove(self, d):
-        # Case 1: Empty Tree?
+    #metodo para eliminat un nodo del arbol.
+    def delete(self, d):
+        # Caso en que el arbol esta vacio
         if self.root is None:
             return False
 
-        # Case 2: Deleting root node
+        # Caso 2, en que el nodo es la raiz
         if self.root.data == d:
             # Case 2.1: Root node has no children
             if self.root.left is None and self.root.right is None:
@@ -127,7 +127,7 @@ class BST(object):
         else:
             return []
 
-    def findMin(self):
+    def find_min(self):
         temp = self.root
         if self.root is None:
             print("Null value")
@@ -138,7 +138,7 @@ class BST(object):
         print("The min value is: " + str(temp.data))
         return temp.data
 
-    def findMax(self):
+    def find_max(self):
         temp = self.root
         if self.root is None:
             print("Null value")
