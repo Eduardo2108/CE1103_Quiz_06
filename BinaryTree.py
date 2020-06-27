@@ -50,8 +50,6 @@ class BST(object):
                 self.root.data = move_node.data
                 if move_node.data < move_node_parent.data:
                     move_node_parent.left = None
-                else:
-                    move_node_parent.right = None
                 return True
         # Find node to remove
         parent = None

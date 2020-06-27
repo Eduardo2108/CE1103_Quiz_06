@@ -43,12 +43,15 @@ class TestBST(TestCase):
         arbol.delete(5)
     def test_deleteRoot_twoChildren(self):
         arbol = BST()
-
+        arbol.add(10)
         arbol.add(50)
+        arbol.add(20)
+        arbol.add(7)
+        arbol.add(8)
         arbol.add(5)
         arbol.add(1)
 
-        arbol.delete(50)
+        arbol.delete(10)
     def test_delete_notExist(self):
         arbol = BST()
         arbol.add(20)
@@ -68,6 +71,38 @@ class TestBST(TestCase):
         arbol.delete(5)
     def test_deleteEmpty(self):
         BST().delete(5)
+
+    def test_deleteNodeNoChildren(self):
+        arbol = BST()
+        arbol.add(10)
+        arbol.add(50)
+        arbol.add(20)
+        arbol.add(7)
+        arbol.add(8)
+        arbol.add(5)
+        arbol.add(1)
+
+        arbol.delete(1)
+
+    def test_deleteNodeLeftChildren(self):
+        arbol = BST()
+        arbol.add(10)
+        arbol.add(50)
+        arbol.add(20)
+        arbol.add(7)
+        arbol.add(8)
+        arbol.add(5)
+        arbol.add(1)
+        arbol.delete(5)
+
+    def test_deleteNodeRightChildren(self):
+        arbol = BST()
+        arbol.add(10)
+        arbol.add(50)
+        arbol.add(20)
+        arbol.add(80)
+
+        arbol.delete(50)
     def test_max(self):
         arbol = BST()
         arbol.add(5)
