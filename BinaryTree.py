@@ -1,6 +1,6 @@
 from Node import Node
 
-
+#hola mundo
 class BST(object):
     def __init__(self):
         self.root = None
